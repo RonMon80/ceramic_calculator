@@ -1,8 +1,12 @@
 <!-- app/views/ceramic_pieces/new.html.erb -->
 
-<h1>Ceramic Calculator</h1>
-<h3>Please enter the specific infos requested below!</h3>
-
-<%= render 'form', ceramic_piece: @ceramic_piece %>
-
-<%= link_to 'Back', root_path %>
+<div class="container mt-5">
+  <h2 class="text-center">Ceramic Piece Cost Calculator</h2>
+  <h3 class="text-center" >Please enter the specific infos requested below!</h3>
+  <div class="row justify-content-center">
+      <div class="col-md-6">
+        <%= render 'form', ceramic_piece: @ceramic_piece %>
+      </div>
+        <%= link_to 'Back', new_ceramic_piece_path %>
+  </div>
+</div>

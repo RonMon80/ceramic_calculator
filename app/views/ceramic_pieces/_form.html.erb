@@ -1,0 +1,58 @@
+<!-- app/views/ceramic_pieces/_form.html.erb -->
+
+<%= form_with(model: ceramic_piece, url: form_ceramic_piece_path, local: true) do |form| %>
+
+  <div>
+    <%= form.label :height, 'Height' %>
+    <%= form.text_field :height, placeholder: 'Enter height in cm' %>
+  </div>
+
+  <div>
+    <%= form.label :width, 'Width' %>
+    <%= form.text_field :width, placeholder: 'Enter width in cm' %>
+  </div>
+
+  <div>
+    <%= form.label :thickness, 'Thickness' %>
+    <%= form.text_field :thickness, placeholder: 'Enter thickness in cm' %>
+  </div>
+
+  <div>
+    <%= form.label :clay_cost, 'Clay Cost' %>
+    <%= form.text_field :clay_cost, placeholder: 'Enter clay cost in currency' %>
+  </div>
+
+  <div>
+    <%= form.label :nail_polish_cost, 'Nail Polish Cost' %>
+    <%= form.text_field :nail_polish_cost, placeholder: 'Enter nail polish cost in currency' %>
+  </div>
+
+  <div>
+    <%= form.label :electricity_cost, 'Electricity Cost' %>
+    <%= form.text_field :electricity_cost, placeholder: 'Enter electricity cost per hour' %>
+  </div>
+
+  <div>
+    <%= form.label :burn_duration, 'Burn Duration' %>
+    <%= form.text_field :burn_duration, placeholder: 'Enter burn duration in hours' %>
+  </div>
+
+  <div>
+    <%= form.label :oven_power, 'Oven Power' %>
+    <%= form.text_field :oven_power, placeholder: 'Enter oven power in kW' %>
+  </div>
+
+  <div>
+    <%= form.label :maintenance_cost, 'Maintenance Cost' %>
+    <%= form.text_field :maintenance_cost, placeholder: 'Enter maintenance cost in currency' %>
+  </div>
+
+  <div>
+    <%= form.label :labor_cost, 'Labor Cost' %>
+    <%= form.text_field :labor_cost, placeholder: 'Enter labor cost in currency' %>
+  </div>
+
+  <div>
+    <%= form.submit "Calculate Cost" %>
+  </div>
+<% end %>

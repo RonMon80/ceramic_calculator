@@ -1,0 +1,26 @@
+<h1>Ceramic Pieces</h1>
+
+<%= link_to 'New Ceramic Piece', new_ceramic_piece_path %>
+
+<table>
+  <thead>
+    <tr>
+      <!-- Add other headers if needed -->
+      <th>Total Cost</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ceramic_pieces.each do |ceramic_piece| %>
+      <tr>
+        <!-- Add other attributes if needed -->
+        <td><%= ceramic_piece.total_cost %></td>
+        <td>
+          <%= link_to 'Show', ceramic_piece %>
+          <%= link_to 'Edit', edit_ceramic_piece_path(ceramic_piece) %>
+          <%= link_to 'Destroy', ceramic_piece, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

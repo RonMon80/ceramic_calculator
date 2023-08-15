@@ -10,6 +10,39 @@ h2 {
 .btn-secondary {
   margin-top: 20px;
 }
+
+.new-background {
+  background: url('clay.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url('clay.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* This keeps the background image fixed during scrolling */
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

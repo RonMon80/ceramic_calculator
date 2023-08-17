@@ -1,60 +1,65 @@
 <!-- app/views/ceramic_pieces/_form.html.erb -->
 <div class="container mt-5">
+  <h2>Ceramic Piece Cost Calculator</h2>
 
   <%= form_with(model: ceramic_piece, url: form_ceramic_piece_path, local: true) do |form| %>
 
+    <h4>Dimensions</h4>
     <div class="mb-3">
-      <%= form.label :height, 'Height:' %>
-      <%= form.text_field :height, placeholder: 'cm' %>
+      <%= form.label :height, 'Height (cm):' %>
+      <%= form.number_field :height, step: 0.01, placeholder: 'Height in cm', class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :width, 'Width:' %>
-      <%= form.text_field :width, placeholder: 'cm' %>
+      <%= form.label :width, 'Width (cm):' %>
+      <%= form.number_field :width, step: 0.01, placeholder: 'Width in cm', class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :thickness, 'Thickness:' %>
-      <%= form.text_field :thickness, placeholder: 'cm' %>
+      <%= form.label :thickness, 'Thickness (cm):' %>
+      <%= form.number_field :thickness, step: 0.01, placeholder: 'Thickness in cm', class: 'form-control' %>
+    </div>
+
+    <h4>Materials</h4>
+    <div class="mb-3">
+      <%= form.label :clay_cost, 'Clay Cost (R$):' %>
+      <%= form.number_field :clay_cost, step: 0.01, placeholder: 'Clay cost', class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :clay_cost, 'Clay Cost:' %>
-      <%= form.text_field :clay_cost, placeholder: 'R$' %>
+      <%= form.label :nail_polish_cost, 'Nail Polish Cost (R$):' %>
+      <%= form.number_field :nail_polish_cost, step: 0.01, placeholder: 'Nail polish cost', class: 'form-control' %>
+    </div>
+
+    <h4>Electricity & Oven</h4>
+    <div class="mb-3">
+      <%= form.label :electricity_cost, 'Electricity Cost per kW/h (R$):' %>
+      <%= form.number_field :electricity_cost, step: 0.01, placeholder: 'Electricity cost', class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :nail_polish_cost, 'Nail Polish Cost:' %>
-      <%= form.text_field :nail_polish_cost, placeholder: 'R$' %>
+      <%= form.label :burn_duration, 'Burn Duration (hours):' %>
+      <%= form.number_field :burn_duration, step: 0.01, placeholder: 'Burn duration', class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :electricity_cost, 'Electricity Cost:' %>
-      <%= form.text_field :electricity_cost, placeholder: 'R$' %>
+      <%= form.label :oven_power, 'Oven Power (kW):' %>
+      <%= form.number_field :oven_power, step: 0.01, placeholder: 'Oven power', class: 'form-control' %>
+    </div>
+
+    <h4>Maintenance & Labor</h4>
+    <div class="mb-3">
+      <%= form.label :maintenance_cost, 'Maintenance Cost (R$):' %>
+      <%= form.number_field :maintenance_cost, step: 0.01, placeholder: 'Maintenance cost', class: 'form-control' %>
     </div>
 
     <div class="mb-3">
-      <%= form.label :burn_duration, 'Burn Duration:' %>
-      <%= form.text_field :burn_duration, placeholder: 'hours' %>
+      <%= form.label :labor_cost, 'Labor Cost (R$):' %>
+      <%= form.number_field :labor_cost, step: 0.01, placeholder: 'Labor cost', class: 'form-control' %>
     </div>
 
-    <div class="mb-3">
-      <%= form.label :oven_power, 'Oven Power:' %>
-      <%= form.text_field :oven_power, placeholder: 'kW' %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :maintenance_cost, 'Maintenance Cost:' %>
-      <%= form.text_field :maintenance_cost, placeholder: 'R$' %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :labor_cost, 'Labor Cost:' %>
-      <%= form.text_field :labor_cost, placeholder: 'R$' %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.submit "Calculate Cost" %>
+    <div class="mb-3 text-center">
+      <%= form.submit "Calculate Cost", class: 'btn btn-primary' %>
     </div>
   <% end %>
 </div>
